@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MeepCollector : MonoBehaviour
 {
-
     public static MeepCollector _instance = new MeepCollector();
 
     List<GameObject> meeps = new List<GameObject>();
@@ -36,13 +35,15 @@ public class MeepCollector : MonoBehaviour
         {
             meep.GetComponent<FollowPlayer>().SetTarget(meeps[meeps.Count - 2].transform);
         }
+
+        UIController._instance.SetMeeps(meeps.Count);
         
     }
 
     public void DestroyMeep(GameObject meep)
     {
         meeps.Remove(meep);
-        //print(meeps.Count);
+        UIController._instance.SetMeeps(meeps.Count);
         UpdateFollows();
     }
 
@@ -50,7 +51,6 @@ public class MeepCollector : MonoBehaviour
     {
         for(int i = meeps.Count - 1; i >= 0; i--)
         {
-            print(i);
             if(i == 0)
             {
                 meeps[i].GetComponent<FollowPlayer>().SetTarget(transform);
