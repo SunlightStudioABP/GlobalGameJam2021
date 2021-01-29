@@ -21,6 +21,8 @@ public class MeepSpawner : MonoBehaviour
 
     void Create()
     {
-        Instantiate(prefab);
+        GameObject instance = Instantiate(prefab);
+
+        instance.transform.Translate(Random.Range(-3.5f, 3.5f), 0, 0);
     }
 }
