@@ -16,6 +16,5 @@ public class FollowPlayer : MonoBehaviour
     public void SetTarget(Transform t)
     {
         target = t;
-        print(t.gameObject);
     }
 }

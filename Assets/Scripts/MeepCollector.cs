@@ -42,21 +42,22 @@ public class MeepCollector : MonoBehaviour
     public void DestroyMeep(GameObject meep)
     {
         meeps.Remove(meep);
+        //print(meeps.Count);
         UpdateFollows();
     }
 
     private void UpdateFollows()
     {
-        for(int i = 0; i < meeps.Count; i++)
+        for(int i = meeps.Count - 1; i >= 0; i--)
         {
-            if (meeps.Count == 1)
+            print(i);
+            if(i == 0)
             {
                 meeps[i].GetComponent<FollowPlayer>().SetTarget(transform);
             }
             else
             {
-                print("HOLA");
-                meeps[i].GetComponent<FollowPlayer>().SetTarget(meeps[meeps.Count - 2].transform);
+                meeps[i].GetComponent<FollowPlayer>().SetTarget(meeps[i-1].transform);
             }
         }
     }
