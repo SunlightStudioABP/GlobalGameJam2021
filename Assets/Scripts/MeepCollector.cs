@@ -65,27 +65,27 @@ public class MeepCollector : MonoBehaviour
 
             case 1: //PRIMER Meep de la cola (despues del player). Meep de danyo
                 meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
-                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                GetComponent<PlayerController>().UpdatePlayerSpecsAfterAddingNewMeep(0);
                 break;
 
             case 2: //SEGUNDO Meep de la cola (despues del player). Meep de velocidad
                 meep.GetComponent<MeepController>().setMeepCurrentType(1); //Asignamos el tipo al meep
-                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(1);
+                GetComponent<PlayerController>().UpdatePlayerSpecsAfterAddingNewMeep(1);
                 break;
 
             case 3: //TERCER Meep de la cola (despues del player). Meep de danyo
                 meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
-                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                GetComponent<PlayerController>().UpdatePlayerSpecsAfterAddingNewMeep(0);
                 break;
 
             case 4: //CUARTO Meep de la cola (despues del player). Meep de velocidad
                 meep.GetComponent<MeepController>().setMeepCurrentType(1); //Asignamos el tipo al meep
-                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(1);
+                GetComponent<PlayerController>().UpdatePlayerSpecsAfterAddingNewMeep(1);
                 break;
 
             case 5: //QUINTO Meep de la cola (despues del player). Meep de danyo
                 meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
-                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                GetComponent<PlayerController>().UpdatePlayerSpecsAfterAddingNewMeep(0);
                 break;
         }
     }
@@ -110,5 +110,10 @@ public class MeepCollector : MonoBehaviour
                 meeps[i].GetComponent<FollowPlayer>().SetTarget(meeps[i-1].transform);
             }
         }
+    }
+
+    public List<GameObject> getMeepList()
+    {
+        return meeps;
     }
 }
