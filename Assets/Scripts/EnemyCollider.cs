@@ -15,7 +15,6 @@ public class EnemyCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("ENTRAMOS");
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             player.AddScore();
 
