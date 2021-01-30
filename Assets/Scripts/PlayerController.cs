@@ -38,8 +38,17 @@ public class PlayerController : MonoBehaviour
         controller.skinWidth = 0f;
     }
 
+    private void Idle()
+    {
+        if (!Input.anyKey)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 5f);
+        }
+    }
+
     void Update()
     {
+        Idle();
         // Movimiento de grupo
         GroupMovement groupMovement = GetComponentInParent<GroupMovement>();
         Vector3 parentVelocity = new Vector3();
