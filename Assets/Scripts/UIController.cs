@@ -11,11 +11,19 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI meepsText;
 
+
+    [SerializeField]
+    private GameObject panelMainMenu, panelGame, panelIngame;
+
+    private GameObject activePanel;
+
     int meeps;
 
     private void Awake()
     {
-        if(_instance == null)
+        Time.timeScale = 0;
+
+        if (_instance == null)
         {
             _instance = this;
         }
@@ -23,6 +31,35 @@ public class UIController : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        activePanel = panelMainMenu;    
+    }
+
+    public void PauseGame()
+    {
+        activePanel.SetActive(false);
+        activePanel = panelIngame;
+        activePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void EndGame()
+    {
+        activePanel.SetActive(false);
+        activePanel = panelMainMenu;
+        activePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        activePanel.SetActive(false);
+        activePanel = panelGame;
+        activePanel.SetActive(true);
     }
 
     public void SetMeeps(int n)
