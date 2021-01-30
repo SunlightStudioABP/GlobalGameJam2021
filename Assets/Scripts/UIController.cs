@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         if (_instance == null)
         {
