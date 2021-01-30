@@ -13,10 +13,37 @@ public class GroupMovement : MonoBehaviour
     // vector de direccion (eje Z en este caso)
     public Vector3 velocity = new Vector3(0, 0, 1);
 
+    private void fixSpeed()
+    {
+        currentSpeed = targetSpeed;
+    }
+
+    private void accelerate()
+    {
+        print("accelerate");
+        if (currentSpeed < targetSpeed)
+            currentSpeed += acceleration;
+        if (currentSpeed > targetSpeed)
+            fixSpeed();
+    }
+
+    private void brake()
+    {
+        if (currentSpeed > targetSpeed)
+            currentSpeed += acceleration;
+        if (currentSpeed < targetSpeed)
+            fixSpeed();
+    }
+
     void Update()
     {
-        if (System.Math.Abs(currentSpeed) < System.Math.Abs(targetSpeed))
-            currentSpeed += acceleration;
+        if (currentSpeed != targetSpeed)
+        {
+            if (acceleration > 0)
+                accelerate();
+            else if (acceleration < 0)
+                brake();
+        }
 
         transform.Translate(velocity * currentSpeed * Time.deltaTime);
     }
