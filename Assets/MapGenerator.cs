@@ -13,6 +13,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     float wallTime = 4f, floorTime = 20f;
 
+    
+
     private void Start()
     {
         InvokeRepeating("PlaceWall", 0f, wallTime);
