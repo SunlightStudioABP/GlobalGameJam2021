@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class MeepController : MonoBehaviour
 {
-    BoxCollider meep_collider;
+    float damageMultiplier = 1f;
 
     public enum meepType { uselessMeep, damageMeep, speedMeep }; // Tipos de MEEPS que van a haber en el juego.
                                                                     // uselessMeep --> Meep para recoger. Sin utilidad
                                                                     // damageMeep --> Meep que anyade danyo al unirse a nuestras filas
                                                                     // speedMeep --> Meep que anyade velocidad al unirse a nuestras filas
-    [SerializeField] meepType meepCurrentType;
+    
+    [SerializeField] meepType meepCurrentType; //Variable donde almacenamos el meepType actual
+
+    public float meepTimeSurviving; //Tiempo que lleva sobreviviendo el meep desde que se une a nuestras filas.
 
 
     private void Awake()
@@ -20,6 +23,13 @@ public class MeepController : MonoBehaviour
 
     private void Start()
     {
+        meepTimeSurviving = 0f;
+    }
+
+    private void Update()
+    {
+        UpdateMeepTimeSurviving();
+        
     }
 
     public void setMeepCurrentType(int newType)
@@ -28,6 +38,7 @@ public class MeepController : MonoBehaviour
         {
             case 0: //Tipo damageMeep
                 meepCurrentType = meepType.damageMeep;
+
                 break;
 
             case 1: //Tipo speedMeep
@@ -41,5 +52,27 @@ public class MeepController : MonoBehaviour
         return meepCurrentType;
     }
 
+    public void UpdateMeepTimeSurviving()
+    {
+        if(meepCurrentType == meepType.damageMeep) //Solamente contamos su tiempo de vida cuando es un meep de tipo danyo
+            meepTimeSurviving += Time.deltaTime;
+
+        //Debug.Log(meepTimeSurviving);
+    }
+
+    public float getMeepTimeSurviving()
+    {
+        return meepTimeSurviving;
+    }
+
+    public float GetDamageMultiplier()
+    {
+        return damageMultiplier;
+    }
+
+    public void AddDamage(float f)
+    {
+        damageMultiplier += f;
+    }
 
 }
