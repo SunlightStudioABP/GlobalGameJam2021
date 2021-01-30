@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
             case 1: // Modo speedMeep, subimos la velocidad
               //  playerSpeed++;
-                GetComponentInParent<GroupMovement>().targetSpeed = 10f;
+                GetComponentInParent<GroupMovement>().targetSpeed += 1f;
                 break;
         }
     }
