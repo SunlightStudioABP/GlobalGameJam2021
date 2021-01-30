@@ -8,6 +8,9 @@ public class MapGenerator : MonoBehaviour
     GameObject wallLeft, wallRight, floorPrefab;
 
     [SerializeField]
+    GameObject biir;
+
+    [SerializeField]
     float wallTime = 4f, floorTime = 20f;
 
     private void Start()
