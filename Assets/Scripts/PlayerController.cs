@@ -10,13 +10,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 playerVelocity;
 
-    [SerializeField] public int playerMeeps     = 1; //VIDA. Cantidad de Meeps que tenemos.
-    [SerializeField] public float playerSpeed   = 2.0f;
-    [SerializeField] public float playerDamage  = 0f;
+    [SerializeField] public int playerMeeps; //VIDA. Cantidad de Meeps que tenemos.
+    [SerializeField] public float playerSpeed;  
+    [SerializeField] public float playerDamage;
 
 
     private void Start()
     {
+        playerMeeps = 1;
+        playerSpeed = 5.0f;
+        playerDamage = 0f;
+
         controller = gameObject.AddComponent<CharacterController>();
     }
 
@@ -38,19 +42,18 @@ public class PlayerController : MonoBehaviour
         return playerSpeed;
     }
 
-    //TODO: Comprobar meeps y ponerle al player sus stats correspondientes
-    /* switch ((int) meepCurrentType)
+    public void NewPlayerSpecsByAddingNewMeep(int meepType) //Cambiamos las estadisticas del player cuando anyadimos un meet nuevo
+    {
+        switch (meepType)
         {
-            case 1: //Modo uselessMeep
-                
+            case 0: //Modo damageMeep, subimos el danyo
+                playerDamage++;
                 break;
 
-            case 2: //Modo damageMeep
+            case 1: //Modo speedMeep, subimos la velocidad
+                playerSpeed++;
                 break;
-
-            case 3: //modo speedMeep
-                break;
-
         }
-    */
+    }
+
 }

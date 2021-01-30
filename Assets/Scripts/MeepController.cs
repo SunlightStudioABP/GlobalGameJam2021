@@ -20,23 +20,25 @@ public class MeepController : MonoBehaviour
 
     private void Start()
     {
-        meep_collider = gameObject.GetComponent<BoxCollider>();
     }
 
-
-    private void Update()
+    public void setMeepCurrentType(int newType)
     {
-       
+        switch (newType)
+        {
+            case 0: //Tipo damageMeep
+                meepCurrentType = meepType.damageMeep;
+                break;
+
+            case 1: //Tipo speedMeep
+                meepCurrentType = meepType.speedMeep;
+                break;
+        }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    public meepType getMeepCurrentType()
     {
-        print("HOLA");
-
-        //if (collision.gameObject.CompareTag("Player"))
-          //  print("HOLA");
-
+        return meepCurrentType;
     }
 
 

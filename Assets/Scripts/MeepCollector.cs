@@ -27,6 +27,8 @@ public class MeepCollector : MonoBehaviour
         meep.AddComponent<FollowPlayer>();
         Destroy(meep.GetComponent<MeepPicker>());
 
+        AssignMeepTypeAndPlayerStats(meep);
+
         if(meeps.Count < 2)
         {
             meep.GetComponent<FollowPlayer>().SetTarget(transform);
@@ -38,6 +40,40 @@ public class MeepCollector : MonoBehaviour
 
         UIController._instance.SetMeeps(meeps.Count);
         
+    }
+
+    public void AssignMeepTypeAndPlayerStats(GameObject meep)
+    {
+        switch (meeps.Count)
+        {
+            case 0: //PLAYER. NO ES UN MEEP. NO HACEMOS NADA
+                break;
+
+            case 1: //PRIMER Meep de la cola (despues del player). Meep de danyo
+                meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
+                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                break;
+
+            case 2: //SEGUNDO Meep de la cola (despues del player). Meep de velocidad
+                meep.GetComponent<MeepController>().setMeepCurrentType(1); //Asignamos el tipo al meep
+                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(1);
+                break;
+
+            case 3: //TERCER Meep de la cola (despues del player). Meep de danyo
+                meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
+                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                break;
+
+            case 4: //CUARTO Meep de la cola (despues del player). Meep de velocidad
+                meep.GetComponent<MeepController>().setMeepCurrentType(1); //Asignamos el tipo al meep
+                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(1);
+                break;
+
+            case 5: //QUINTO Meep de la cola (despues del player). Meep de danyo
+                meep.GetComponent<MeepController>().setMeepCurrentType(0); //Asignamos el tipo al meep
+                GetComponent<PlayerController>().NewPlayerSpecsByAddingNewMeep(0);
+                break;
+        }
     }
 
     public void DestroyMeep(GameObject meep)
