@@ -15,11 +15,8 @@ public class GroupMovement : MonoBehaviour
 
     void Update()
     {
-        if (currentSpeed < targetSpeed)
+        if (System.Math.Abs(currentSpeed) < System.Math.Abs(targetSpeed))
             currentSpeed += acceleration;
-
-        if (currentSpeed > targetSpeed)
-            currentSpeed = targetSpeed;
 
         transform.Translate(velocity * currentSpeed * Time.deltaTime);
     }

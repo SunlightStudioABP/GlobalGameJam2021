@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public float groupSpeed;  // Velocidad a la que se mueve el GRUPO
 
+    private float score;
+
     private void Start()
     {
         playerMeeps = 1;
@@ -110,6 +112,11 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(playerDamage);
     }
 
+    public void AddScore()
+    {
+        score += playerDamage;
+        UIController._instance.SetScore(score);
+    }
 
 
 }

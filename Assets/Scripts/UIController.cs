@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     public static UIController _instance;
 
     [SerializeField]
-    private TextMeshProUGUI meepsText;
+    private TextMeshProUGUI meepsText, scoreText;
 
 
     [SerializeField]
@@ -71,5 +71,10 @@ public class UIController : MonoBehaviour
     private void UpdateUI()
     {
         meepsText.text = meeps.ToString();
+    }
+
+    public void SetScore(float score)
+    {
+        scoreText.text = score.ToString();
     }
 }
