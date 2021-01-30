@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public static UIController _instance = new UIController();
+    public static UIController _instance;
 
     [SerializeField]
     private TextMeshProUGUI meepsText;

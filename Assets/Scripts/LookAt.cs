@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject target;
 
-    // Update is called once per frame
     void Update()
     {
-        transform.LookAt(transform.parent.position);
+        transform.LookAt(target.transform.position);
     }
 }
