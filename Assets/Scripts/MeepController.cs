@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeepController : MonoBehaviour
 {
-    BoxCollider meep_collider;
+    float damageMultiplier = 1f;
 
     public enum meepType { uselessMeep, damageMeep, speedMeep }; // Tipos de MEEPS que van a haber en el juego.
                                                                     // uselessMeep --> Meep para recoger. Sin utilidad
@@ -63,6 +63,16 @@ public class MeepController : MonoBehaviour
     public float getMeepTimeSurviving()
     {
         return meepTimeSurviving;
+    }
+
+    public float GetDamageMultiplier()
+    {
+        return damageMultiplier;
+    }
+
+    public void AddDamage(float f)
+    {
+        damageMultiplier += f;
     }
 
 }

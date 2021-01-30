@@ -85,21 +85,20 @@ public class PlayerController : MonoBehaviour
 
     public void UpdatePlayerSpecsByMeepSurviving() //Actualizamos los stats nos aporta cada meep en funcion del tiempo que lleven sobreviviendo (recompensa)
     {
-       List<GameObject> meeps =  MeepCollector._instance.getMeepList();
+        List<GameObject> meeps = MeepCollector._instance.getMeepList();                 //Obtenemos la fila de meeps detras del jugador
+        scoreMultiplicator = 0;
 
-        for(int i = 0; i<meeps.Count; i++)
+        for(int i = 0; i < meeps.Count; i++)
         {
-            if((int)meeps[i].GetComponent<MeepController>().getMeepCurrentType() == 1) //Averiguamos si el meep es de tipo danyo
+            if ((int)meeps[i].GetComponent<MeepController>().getMeepCurrentType() == 1) //Si el meep es de tipo danyo
             {
-                playerMeepsDamageType++;
-                scoreMultiplicator += scoreMultiplicatorRatio;
-                //Debug.Log(scoreMultiplicator);
+                meeps[i].GetComponent<MeepController>().AddDamage(scoreMultiplicatorRatio);
+                scoreMultiplicator += meeps[i].GetComponent<MeepController>().GetDamageMultiplier();
             }
         }
 
-        playerDamage += scoreMultiplicator;
-        Debug.Log(playerDamage);
-
+        playerDamage = (float)System.Math.Round(scoreMultiplicator, 1);                                             //Sumamos el multiplicador al daño del personaje
+        //Debug.Log(playerDamage);
     }
 
 
