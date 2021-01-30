@@ -18,8 +18,8 @@ public class EnemyCollider : MonoBehaviour
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             player.AddScore();
 
-            gameObject.GetComponentInParent<GroupMovement>().currentSpeed = velocidadRebote;
-            //other.GetComponentInParent<GroupMovement>().currentSpeed = -velocidadRebote;
+            //gameObject.GetComponentInParent<GroupMovement>().currentSpeed = velocidadRebote;
+            other.GetComponentInParent<GroupMovement>().currentSpeed = -velocidadRebote;
         }
     }
 }

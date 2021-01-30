@@ -8,6 +8,7 @@ TagManager:
   - DeathOnCollision
   - Cube
   - Rebote
+  - CollectedMeep
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Player
   - PlayerZone
   - Enemy
-  - 
-  - 
+  - Meep
+  - Obstacle
   - 
   - 
   - 

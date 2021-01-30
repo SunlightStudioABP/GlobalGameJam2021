@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    private int distance;
+
+
     private CharacterController controller;
 
     private Vector3 playerVelocity;
@@ -71,6 +75,11 @@ public class PlayerController : MonoBehaviour
         Vector3 totalVelocity = parentVelocity + playerVelocity;
 
         controller.Move(totalVelocity * Time.deltaTime);
+
+        distance = (int)System.Math.Round((double)(Time.time / 0.5f));
+        UIController._instance.SetDistance(distance);
+
+
     }
 
     public float GetSpeed()
@@ -84,12 +93,14 @@ public class PlayerController : MonoBehaviour
         {
             case 0: // Modo damageMeep, subimos el danyo
                 playerDamage++;
+                UIController._instance.SetDamage(playerDamage);
                 InvokeRepeating("UpdatePlayerSpecsByMeepSurviving", 5f, 5f);
                 break;
 
             case 1: // Modo speedMeep, subimos la velocidad
               //  playerSpeed++;
                 GetComponentInParent<GroupMovement>().targetSpeed += 1f;
+                UIController._instance.SetSpeed(GetComponentInParent<GroupMovement>().targetSpeed);
                 break;
         }
     }
@@ -109,6 +120,7 @@ public class PlayerController : MonoBehaviour
         }
 
         playerDamage = (float)System.Math.Round(scoreMultiplicator, 1);                                             //Sumamos el multiplicador al daño del personaje
+        UIController._instance.SetDamage(playerDamage);
         //Debug.Log(playerDamage);
     }
 
@@ -117,6 +129,5 @@ public class PlayerController : MonoBehaviour
         score += playerDamage;
         UIController._instance.SetScore(score);
     }
-
 
 }

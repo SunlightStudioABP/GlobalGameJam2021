@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     public static UIController _instance;
 
     [SerializeField]
-    private TextMeshProUGUI meepsText, scoreText;
+    private TextMeshProUGUI distanceText, scoreText, damageText, speedText;
 
 
     [SerializeField]
@@ -62,15 +62,17 @@ public class UIController : MonoBehaviour
         activePanel.SetActive(true);
     }
 
-    public void SetMeeps(int n)
+    public void SetDistance(int f)
     {
-        meeps = n;
-        UpdateUI();
+        distanceText.text = f.ToString() + "m";
     }
-
-    private void UpdateUI()
+    public void SetDamage(float damage)
     {
-        meepsText.text = meeps.ToString();
+        damageText.text = damage.ToString();
+    }
+    public void SetSpeed(float speed)
+    {
+        speedText.text = speed.ToString();
     }
 
     public void SetScore(float score)

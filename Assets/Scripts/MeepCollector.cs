@@ -40,7 +40,7 @@ public class MeepCollector : MonoBehaviour
         meeps.Add(meep);
         meep.AddComponent<FollowPlayer>();
         Destroy(meep.GetComponent<MeepPicker>());
-
+        meep.tag = "CollectedMeep";
         AssignMeepTypeAndPlayerStats(meep);
 
         if(meeps.Count < 2)
@@ -51,8 +51,6 @@ public class MeepCollector : MonoBehaviour
         {
             meep.GetComponent<FollowPlayer>().SetTarget(meeps[meeps.Count - 2].transform);
         }
-
-        UIController._instance.SetMeeps(meeps.Count);
         
     }
 
@@ -93,9 +91,26 @@ public class MeepCollector : MonoBehaviour
     public void DestroyMeep(GameObject meep)
     {
         meeps.Remove(meep);
-        UIController._instance.SetMeeps(meeps.Count);
+        Destroy(meep);
         UpdateFollows();
     }
+
+    public void KillLastMeep()
+    {
+        if(meeps.Count > 0)
+        {
+            DestroyMeep(meeps[meeps.Count - 1]);
+        }
+        else
+        {
+            UIController._instance.EndGame();
+        }
+    }
+
+   public void Kill(GameObject meep)
+   {
+        DestroyMeep(meep);
+   }
 
     private void UpdateFollows()
     {

@@ -20,7 +20,6 @@ public class GroupMovement : MonoBehaviour
 
     private void accelerate()
     {
-        print("accelerate");
         if (currentSpeed < targetSpeed)
             currentSpeed += acceleration;
         if (currentSpeed > targetSpeed)
