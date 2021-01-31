@@ -6,10 +6,10 @@ public class TerrainSpawner : MonoBehaviour
 {
     public Transform parentGroup;
     public GameObject[] terrainPrefabs;
-
+    public float spawnTime;
     private void Start()
     {
-        InvokeRepeating("GenerateTerrainPrefab", 5f, 5f);
+        InvokeRepeating("GenerateTerrainPrefab", 0, spawnTime);
     }
 
     private void GenerateTerrainPrefab()

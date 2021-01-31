@@ -934,8 +934,8 @@ GameObject:
   - component: {fileID: 6161712498797351872}
   - component: {fileID: 6161712498797351873}
   m_Layer: 0
-  m_Name: Biir_Zorro@Running
-  m_TagString: Untagged
+  m_Name: Biit
+  m_TagString: Meep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

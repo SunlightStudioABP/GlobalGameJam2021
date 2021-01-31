@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2088351040450175585}
   - component: {fileID: 4260307927933998763}
   - component: {fileID: -8180952185254019781}
+  - component: {fileID: 165015757701549384}
   m_Layer: 0
   m_Name: Columna_bien
   m_TagString: Untagged
@@ -93,3 +94,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a4e4fbf9f2bb4469c1e600df1e8a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &165015757701549384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314668845704869758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.023522483, y: 0.02676272, z: 0.0955212}
+  m_Center: {x: -0.00072493963, y: 0.0034212624, z: 0.047273114}
