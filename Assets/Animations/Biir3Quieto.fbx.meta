@@ -1,50 +1,53 @@
 fileFormatVersion: 2
-guid: 9749754893b29004bb68a40383f26f70
+guid: 7b5c00cc8ee92504cad1975001c43bfc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 2264077025236624520
-    second: Armature.001|Armature.001Action
+      74: 6906267723572508546
+    second: Waiting
   - first:
-      74: -5784005261616917065
-    second: Armature.001|Armature.001Action.001
+      74: 5138602965388526686
+    second: Armature.002|Armature.002Action
   - first:
-      74: -1153017888000365145
-    second: Armature.001|Armature.002Action
+      74: -5505715565960345857
+    second: Armature.002|Armature.003Action
   - first:
-      74: 2916337095380250643
-    second: Armature.001|Armature.002Action.001
+      74: 3530596194268279727
+    second: Armature.002|Armature.004Action
   - first:
-      74: -960898424075949690
-    second: Armature.001|ArmatureAction
+      74: -5382724091580818210
+    second: Armature.002|Armature.005Action
   - first:
-      74: -8639993316982285888
-    second: Armature.001|ArmatureAction.001
+      74: -8836621084560152649
+    second: NotCollected
   - first:
-      74: 669746971585176909
-    second: Armature.001|Cylinder.001Action
+      74: 8368265636151829555
+    second: Armature.002|ArmatureAction.001
   - first:
-      74: -3496518877342875560
-    second: Armature.001|Cylinder.004Action.003
+      74: -3704164488218222031
+    second: Armature.002|Cylinder.001Action
   - first:
-      74: -3116884291912103444
-    second: Armature.001|Cylinder.005Action
+      74: 9124255431763179217
+    second: Armature.002|Cylinder.004Action.003
   - first:
-      74: -2309838807918990858
-    second: Armature.001|Cylinder.013Action
+      74: 3978152583871159329
+    second: Armature.002|Cylinder.005Action
   - first:
-      74: 494183501047548604
-    second: Armature.001|Cylinder.014Action
+      74: -5975405599842254184
+    second: Armature.002|Cylinder.013Action
   - first:
-      74: -5008505817681617298
-    second: Armature.001|Cylinder.015Action
+      74: -2357363487633457150
+    second: Armature.002|Cylinder.014Action
   - first:
-      74: 8981658596615352928
-    second: Armature.001|Meep.004Action
+      74: -7987566680127689800
+    second: Armature.002|Cylinder.015Action
+  - first:
+      74: -1538724299083062206
+    second: Armature.002|Meep.004Action
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -71,8 +74,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Armature.001Action
-      takeName: Armature.001|Armature.001Action
+      name: Waiting
+      takeName: Armature.002|Armature.001Action
       internalID: 0
       firstFrame: 0
       lastFrame: 110
@@ -100,11 +103,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Armature.001Action.001
-      takeName: Armature.001|Armature.001Action.001
+      name: Armature.002|Armature.002Action
+      takeName: Armature.002|Armature.002Action
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -129,8 +132,37 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Armature.002Action
-      takeName: Armature.001|Armature.002Action
+      name: Armature.002|Armature.003Action
+      takeName: Armature.002|Armature.003Action
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.002|Armature.004Action
+      takeName: Armature.002|Armature.004Action
       internalID: 0
       firstFrame: 0
       lastFrame: 100
@@ -158,11 +190,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Armature.002Action.001
-      takeName: Armature.001|Armature.002Action.001
+      name: Armature.002|Armature.005Action
+      takeName: Armature.002|Armature.005Action
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -187,18 +219,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|ArmatureAction
-      takeName: Armature.001|ArmatureAction
+      name: NotCollected
+      takeName: Armature.002|Armature.005Action.001
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -216,8 +248,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|ArmatureAction.001
-      takeName: Armature.001|ArmatureAction.001
+      name: Armature.002|ArmatureAction.001
+      takeName: Armature.002|ArmatureAction.001
       internalID: 0
       firstFrame: 0
       lastFrame: 103
@@ -245,8 +277,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.001Action
-      takeName: Armature.001|Cylinder.001Action
+      name: Armature.002|Cylinder.001Action
+      takeName: Armature.002|Cylinder.001Action
       internalID: 0
       firstFrame: 0
       lastFrame: 100
@@ -274,11 +306,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.004Action.003
-      takeName: Armature.001|Cylinder.004Action.003
+      name: Armature.002|Cylinder.004Action.003
+      takeName: Armature.002|Cylinder.004Action.003
       internalID: 0
       firstFrame: 0
-      lastFrame: 100
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -303,8 +335,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.005Action
-      takeName: Armature.001|Cylinder.005Action
+      name: Armature.002|Cylinder.005Action
+      takeName: Armature.002|Cylinder.005Action
       internalID: 0
       firstFrame: 0
       lastFrame: 59
@@ -332,8 +364,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.013Action
-      takeName: Armature.001|Cylinder.013Action
+      name: Armature.002|Cylinder.013Action
+      takeName: Armature.002|Cylinder.013Action
       internalID: 0
       firstFrame: 0
       lastFrame: 100
@@ -361,8 +393,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.014Action
-      takeName: Armature.001|Cylinder.014Action
+      name: Armature.002|Cylinder.014Action
+      takeName: Armature.002|Cylinder.014Action
       internalID: 0
       firstFrame: 0
       lastFrame: 100
@@ -390,8 +422,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Cylinder.015Action
-      takeName: Armature.001|Cylinder.015Action
+      name: Armature.002|Cylinder.015Action
+      takeName: Armature.002|Cylinder.015Action
       internalID: 0
       firstFrame: 0
       lastFrame: 100
@@ -419,8 +451,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Meep.004Action
-      takeName: Armature.001|Meep.004Action
+      name: Armature.002|Meep.004Action
+      takeName: Armature.002|Meep.004Action
       internalID: 0
       firstFrame: 0
       lastFrame: 59
