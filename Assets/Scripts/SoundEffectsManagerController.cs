@@ -7,7 +7,7 @@ public class SoundEffectsManagerController : MonoBehaviour
 
     public static SoundEffectsManagerController _instance;
 
-    [SerializeField] private AudioSource sound;
+    private AudioSource sound;
 
     [SerializeField] AudioClip attackSound, collectMeep, hurtPlayer, menuOptionSound, selectMenuOptionSound;
 
