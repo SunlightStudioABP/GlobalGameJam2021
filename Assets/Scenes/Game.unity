@@ -1617,7 +1617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &673016818
 Transform:
   m_ObjectHideFlags: 0
@@ -1626,7 +1626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673016817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.14, z: 0}
+  m_LocalPosition: {x: 11.58, y: 3.14, z: 1.23}
   m_LocalScale: {x: 1.9449, y: 1.9449, z: 1.9449}
   m_Children: []
   m_Father: {fileID: 1311846738}
@@ -4079,6 +4079,11 @@ PrefabInstance:
       propertyPath: music
       value: 
       objectReference: {fileID: 680195503}
+    - target: {fileID: 3301746215709500010, guid: efeda8ca90ef30f47a834b35a873b746,
+        type: 3}
+      propertyPath: volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3301746215709500014, guid: efeda8ca90ef30f47a834b35a873b746,
         type: 3}
       propertyPath: m_Pivot.x

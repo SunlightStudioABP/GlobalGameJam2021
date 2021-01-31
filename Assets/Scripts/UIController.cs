@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
 {
     public static UIController _instance;
 
+
     [SerializeField]
     private TextMeshProUGUI distanceText, scoreText, damageText, speedText, distanceTextShadow, scoreTextShadow, damageTextShadow, speedTextShadow;
 
@@ -20,14 +21,16 @@ public class UIController : MonoBehaviour
     AudioClip menuSong, ingameSong, inGameintro;
 
     [SerializeField]
-    private GameObject panelMainMenu, panelGame, panelIngame;
-    int actualOption = 1, pauseOption = 1;
+    private GameObject panelMainMenu, panelGame, panelIngame, panelGameOver;
+    int actualOption = 1, pauseOption = 1, gameOverOption = 1;
 
     [SerializeField]
-    private Sprite selectedPlay, selectedCredits, selectedExit, selectedMainMenu, selectedResume;
+    private Sprite selectedPlay, selectedCredits, selectedExit, selectedMainMenu, selectedResume, selectedPlayAgain, selectedGameOverMainMenu;
 
     [SerializeField]
-    private Image mainMenuImage, pauseMenuImage;
+    private Image mainMenuImage, pauseMenuImage, gameOverImage;
+
+    public float volume = 0.3f;
 
     private GameObject activePanel;
 
@@ -61,47 +64,55 @@ public class UIController : MonoBehaviour
         #region Main Menu
         if (activePanel == panelMainMenu)
         {
-            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            if (!ReplayMode._instance.IsReplay())
             {
-                actualOption--;
-                if(actualOption == 0)
-                    actualOption = 3;
-            }
-            if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                actualOption++;
-                if (actualOption == 4)
-                    actualOption = 1;
-            }
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    actualOption--;
+                    if (actualOption == 0)
+                        actualOption = 3;
+                }
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    actualOption++;
+                    if (actualOption == 4)
+                        actualOption = 1;
+                }
 
-            switch (actualOption)
-            {
-                case 1:
-                    mainMenuImage.sprite = selectedPlay;
-                    break;
-                case 2:
-                    mainMenuImage.sprite = selectedCredits;
-                    break;
-                case 3:
-                    mainMenuImage.sprite = selectedExit;
-                    break;
-            }
-
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-            {
                 switch (actualOption)
                 {
                     case 1:
-                        StartGame();
+                        mainMenuImage.sprite = selectedPlay;
                         break;
                     case 2:
-                        //Creditos
+                        mainMenuImage.sprite = selectedCredits;
                         break;
                     case 3:
-                        Application.Quit();
+                        mainMenuImage.sprite = selectedExit;
                         break;
                 }
+
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    switch (actualOption)
+                    {
+                        case 1:
+                            StartGame();
+                            break;
+                        case 2:
+                            //Creditos
+                            break;
+                        case 3:
+                            Application.Quit();
+                            break;
+                    }
+                }
             }
+            else
+            {
+                StartGame();
+            }
+            
         }
         #endregion
         #region Pause Menu
@@ -138,6 +149,47 @@ public class UIController : MonoBehaviour
                         ResumeGame();
                         break;
                     case 2:
+                        ReplayMode._instance.SetBool(false);
+                        EndGame();
+                        break;
+                }
+            }
+        }
+        #endregion
+        #region GameOver Menu
+        if (activePanel == panelGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                gameOverOption--;
+                if (gameOverOption == 0)
+                    gameOverOption = 2;
+            }
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                gameOverOption++;
+                if (gameOverOption == 3)
+                    gameOverOption = 1;
+            }
+
+            switch (gameOverOption)
+            {
+                case 1:
+                    gameOverImage.sprite = selectedPlayAgain;
+                    break;
+                case 2:
+                    gameOverImage.sprite = selectedGameOverMainMenu;
+                    break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            {
+                switch (gameOverOption)
+                {
+                    case 1:
+                        ReestartGame();
+                        break;
+                    case 2:
                         EndGame();
                         break;
                 }
@@ -154,6 +206,15 @@ public class UIController : MonoBehaviour
 
     }
 
+    public void DieScreen()
+    {
+        gameOverOption = 1;
+        activePanel.SetActive(false);
+        activePanel = panelGameOver;
+        activePanel.SetActive(true);
+        music.volume = volume;
+    }
+
     private void PauseGame()
     {
         pauseOption = 1;
@@ -161,10 +222,16 @@ public class UIController : MonoBehaviour
         activePanel = panelIngame;
         activePanel.SetActive(true);
         Time.timeScale = 0;
+        music.volume = volume;
     }
 
     public void EndGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private void ReestartGame()
+    {
+        ReplayMode._instance.SetBool(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -186,6 +253,8 @@ public class UIController : MonoBehaviour
         activePanel.SetActive(false);
         activePanel = panelGame;
         activePanel.SetActive(true);
+
+        music.volume = 1f;
     }
 
     public void SetDistance(int f)

@@ -103,7 +103,7 @@ public class MeepCollector : MonoBehaviour
         }
         else
         {
-            UIController._instance.EndGame();
+            UIController._instance.DieScreen();
         }
     }
 
