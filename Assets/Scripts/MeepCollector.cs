@@ -96,6 +96,7 @@ public class MeepCollector : MonoBehaviour
         if(meeps.Count > 0)
         {
             DestroyMeep(meeps[meeps.Count - 1]);
+            GetComponent<PlayerController>().CheckSpeed(meeps[meeps.Count - 1]);
         }
         else
         {

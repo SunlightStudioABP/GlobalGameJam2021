@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
         playerDamage = (float)System.Math.Round(scoreMultiplicator, 1);                                             //Sumamos el multiplicador al daño del personaje
         UIController._instance.SetDamage(playerDamage);
     }
@@ -138,4 +139,15 @@ public class PlayerController : MonoBehaviour
         UIController._instance.SetScore((float)System.Math.Round(score,0));
     }
 
+    public void CheckSpeed(GameObject meep)
+    {
+        if ((int)meep.GetComponent<MeepController>()?.getMeepCurrentType() == 0) //Si el meep es de tipo danyo
+        {
+            playerSpeed -= 2.5f;
+            meep.GetComponent<FollowPlayer>().speed -= 2.5f;
+            playerSpeed -= 5f;
+        }
+
+        UIController._instance.SetSpeed(playerSpeed);
+    }
 }

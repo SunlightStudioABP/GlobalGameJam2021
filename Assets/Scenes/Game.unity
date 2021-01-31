@@ -1201,7 +1201,7 @@ MonoBehaviour:
   - {fileID: 4386798365959146924, guid: 6ecaea882704b464c8495e5dfc249c83, type: 3}
   - {fileID: 2314668845704869758, guid: fccc43173eb4e3946b30f68720b3e0f9, type: 3}
   - {fileID: 1234157502430977000, guid: a3f55f9b11f636141af91353f8ab57ac, type: 3}
-  spawnTime: 5
+  spawnTime: 1.5
 --- !u!114 &1248486113
 MonoBehaviour:
   m_ObjectHideFlags: 0
