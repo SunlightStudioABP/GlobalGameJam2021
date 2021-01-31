@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
+        score = 0;
+        distance = 0;
         playerDamage = 1f;
         playerSpeed = 5f;
         scoreMultiplicatorRatio = 0.1f; //Aumenta el multiplicador 0.1 cada X segundos
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(totalVelocity * Time.deltaTime);
 
-        distance = (int)System.Math.Round((double)(Time.time / 0.5f));
+        distance = (int)System.Math.Round((double)(Time.timeSinceLevelLoad / 0.5f));
         UIController._instance.SetDistance(distance);
 
 

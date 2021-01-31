@@ -264,6 +264,7 @@ public class UIController : MonoBehaviour
 
     public void EndGame()
     {
+        ReplayMode.replay = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void ReestartGame()
