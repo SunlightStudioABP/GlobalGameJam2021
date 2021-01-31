@@ -14,7 +14,7 @@ public class ChildrenMovement : MonoBehaviour
 
         foreach (Transform t in GetComponentsInChildren<Transform>())
         {
-            if (t != this.transform)
+            if (t != this.transform && t.parent.transform == transform)
                 t.Translate(velocity * speed * Time.deltaTime);
         }
     }

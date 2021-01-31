@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633819960415136032}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pierna_izquierda_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,9 +40,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1677563553178722489}
   - component: {fileID: 1210727592321602872}
-  m_Layer: 0
+  - component: {fileID: 7197392405957559077}
+  - component: {fileID: -6034908859392852682}
+  - component: {fileID: -8028816180501271813}
+  - component: {fileID: 8405469055085056233}
+  m_Layer: 11
   m_Name: Biir3
-  m_TagString: Untagged
+  m_TagString: Meep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021051378258704899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593217218972095399}
@@ -73,7 +77,7 @@ Animator:
   m_GameObject: {fileID: 2021051378258704899}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d737f02c55b1f184a82e7e397118e643, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3341a133d479f5c469241b548cea5590, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -82,6 +86,61 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7197392405957559077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021051378258704899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff534e82787ea6479f2d109f74424fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meepCurrentType: 0
+  meepTimeSurviving: 0
+--- !u!114 &-6034908859392852682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021051378258704899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf7264580e3bbe4fb8082cc4a20619d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &-8028816180501271813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021051378258704899}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8405469055085056233
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021051378258704899}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!1 &2030050507972324681
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389390100390405131}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brazo_derecho.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 593217218972095399}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Armature.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6236850404554341496}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pierna_derecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2651595251222468736}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brazo_derecho.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414870083771594332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brazo_derecho_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 628097432737662031}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brazo_derecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8217133088719904973}
   - component: {fileID: 5347547951081943028}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Meep.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3091063636351721833}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8327150666362367158}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cabeza_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2540677447284477642}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pierna_izquierda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2287667513235933678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078961263258173746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pierna_derecha_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8621348672580696402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}

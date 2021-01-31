@@ -10,7 +10,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        if((target.position - transform.position).magnitude > distancia)
+        if(target && transform && (target.position - transform.position).magnitude > distancia)
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
     public void SetTarget(Transform t)
