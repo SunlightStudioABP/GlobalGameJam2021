@@ -6,19 +6,8 @@ public class MeepCollector : MonoBehaviour
 {
     public ChildrenMovement terrainMovement;
     public ChildrenMovement obstaclesMovement;
-    /* 
-        Resumen: 
-            no pongais ningun "new" fuera de ninguna funcion
 
-        Motivo asqueroso que os podeis saltar si os aburre:
-            Los "news" en las declaraciones no siguen un orden entre ellos ni tienen por que ejecutarse antes de Awake.
-            Lo que me ha pasado es que primero hizo "new" la lista de meeps, despues se ejecuto awake, y despues se ejecuto el
-            "new" que marco abajo con una flechita ("<-----"). Entonces se ejecuto primero THIS.meeps = new List, se entro a this.Awake,
-            se hizo _instance = this, y DESPUES se ejecuto _instance = new MeepCollector. Esa nueva instancia creada no ejecuta la linea
-            de "new List" de meeps, porque las inicializaciones fuera de las funciones se ejecutan una unica vez (al leer Unity el fichero
-            por primera vez). Entonces si yo despues quiero operar con la lista de meeps, de forma completamente aleatoria me falla con un
-            nullPointerException (o como se llame xD). Al quitarlo, de paso la consola deja de poner warnings cerdos
-    */
+    public GameObject meepParent;
 
     public static MeepCollector _instance;   //      <-----
 
@@ -44,6 +33,7 @@ public class MeepCollector : MonoBehaviour
         Destroy(meep.GetComponent<MeepPicker>());
         meep.tag = "CollectedMeep";
         meep.GetComponent<Animator>().SetBool("Collected", true);
+        meep.transform.SetParent(meepParent.transform);
 
         AssignMeepTypeAndPlayerStats(meep);
 
