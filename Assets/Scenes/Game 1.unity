@@ -608,12 +608,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4820388e601455489084c1d222bdbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numMaxGroundAreas: 3
   groundPrefab: {fileID: 6216072960484934872, guid: b12dc7aec2359694bab2eb22af3da3f5,
     type: 3}
+  numMaxWallsPerSide: 6
+  firstLeftWallPos: {x: -7.5, y: 1, z: 0}
+  firstRightWallPos: {x: 7.5, y: 1, z: 0}
   wallPrefabs:
-  - {fileID: 7634141258161564567, guid: 4768fcbae40267840984744e5643d1d4, type: 3}
-  - {fileID: 8623593798106732169, guid: 2c3bba65716c7224980497ca089d3c4b, type: 3}
-  - {fileID: 6671176578272215503, guid: 865809626a5360e43b626c40ed0717e7, type: 3}
+  - {fileID: 8923151476621599643, guid: 7db742eb8e64fdf4cb532e5a0e832526, type: 3}
+  - {fileID: 7239714383099313763, guid: 81d2da22f66ae6c48b8afa338fc8daaf, type: 3}
+  - {fileID: 1538742579362576061, guid: 1b6efe345da6f324fb3e99ec11c070ef, type: 3}
+  - {fileID: 7509601139463957976, guid: 9b2c61364165a3e47b1ee16155ac7d79, type: 3}
 --- !u!114 &627355371
 MonoBehaviour:
   m_ObjectHideFlags: 0
