@@ -1,35 +1,53 @@
 fileFormatVersion: 2
-guid: 38f12cc9d5ddfbd4487d4ddd4c841300
+guid: 8f8d24140747fc84185eb230583e1091
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -1288334537179099229
-    second: Animation
+      74: 3598511621795961054
+    second: Armature.003|Armature.001Action
   - first:
-      74: -8982458350139185403
-    second: Armature.006|Cylinder.001Action
+      74: 9037844244156796830
+    second: Armature.003|Armature.001Action.001
   - first:
-      74: -1490399183645877024
-    second: Armature.006|Cylinder.004Action.003
+      74: -894896622507537408
+    second: Armature.003|Armature.002Action
   - first:
-      74: -7392540301831340205
-    second: Armature.006|Cylinder.005Action
+      74: 4362092049284334809
+    second: Armature.003|Armature.002Action.001
   - first:
-      74: -8576926066766195544
-    second: Armature.006|Cylinder.013Action
+      74: 8645343760740499401
+    second: Armature.003|Armature.003Action
   - first:
-      74: -2196370118376771673
-    second: Armature.006|Cylinder.014Action
+      74: 7738622313493689335
+    second: Armature.003|ArmatureAction
   - first:
-      74: -2417717227314853246
-    second: Armature.006|Cylinder.015Action
+      74: -4892983548465906659
+    second: Armature.003|ArmatureAction.001
   - first:
-      74: -8620594980229713276
-    second: Armature.006|Meep.004Action
+      74: -3177756505724159729
+    second: Armature.003|Cylinder.001Action
+  - first:
+      74: -495206657268322131
+    second: Armature.003|Cylinder.004Action.003
+  - first:
+      74: -2004642751114059085
+    second: Armature.003|Cylinder.005Action
+  - first:
+      74: -618225216187977381
+    second: Armature.003|Cylinder.013Action
+  - first:
+      74: -5408099902014266467
+    second: Armature.003|Cylinder.014Action
+  - first:
+      74: 3155617296699604083
+    second: Armature.003|Cylinder.015Action
+  - first:
+      74: -4978144598195883772
+    second: Armature.003|Meep.004Action
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -54,36 +72,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Animation
-      takeName: Armature.006|Armature.006Action
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

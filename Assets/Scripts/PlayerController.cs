@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private int distance;
 
-    public float increaseMovement = 5f;
+    private float increaseMovement = 5f;
 
     [SerializeField]
     private ChildrenMovement[] terreno;
@@ -16,36 +16,25 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 playerVelocity;
 
-    public int   playerMeeps, playerMeepsDamageType; // playerMeeps --> VIDA. Cantidad de Meeps que tenemos
-                                                     // playerMeepsDamageType --> Cantidad de Meeps de tipo danyo que tenemos
+    private float playerDamage, playerSpeed; //Danyo y velocidad que tiene el player
 
-    public float playerDamage, playerSpeed; //Danyo y velocidad que tiene el player
-
-    public int   playerScore, playerScoreDistance; //Puntuaciones.
-                                                   //PlayerScore -> Puntos acumulados por ir haciendole danyo al boss
-                                                   //PlayerScoreDistance -> Distancia recorrida (en "metros") durante la partida
-    public float scoreMultiplicator;
     [SerializeField] float scoreMultiplicatorRatio;
-
-    public float groupSpeed;  // Velocidad a la que se mueve el GRUPO
 
     private float score;
 
     private void Start()
     {
-        playerMeeps = 1;
-        playerMeepsDamageType = 0;
-        playerDamage = 0f;
+        playerDamage = 1f;
         playerSpeed = 5f;
-        groupSpeed = 0f;
-
-        scoreMultiplicator = 0f;
         scoreMultiplicatorRatio = 0.1f; //Aumenta el multiplicador 0.1 cada X segundos
 
         controller = gameObject.AddComponent<CharacterController>();
 
         controller.minMoveDistance = 0f;
         controller.skinWidth = 0f;
+
+        UIController._instance.SetDamage(playerDamage);
+        UIController._instance.SetSpeed(playerSpeed);
     }
 
     private void Idle()
@@ -69,7 +58,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         controller.Move(movement.normalized * Time.deltaTime * playerSpeed);
-
         if (movement != Vector3.zero)
         {
             gameObject.transform.forward = movement.normalized;
@@ -118,7 +106,7 @@ public class PlayerController : MonoBehaviour
     public void UpdatePlayerSpecsByMeepSurviving() //Actualizamos los stats nos aporta cada meep en funcion del tiempo que lleven sobreviviendo (recompensa)
     {
         List<GameObject> meeps = MeepCollector._instance.getMeepList();                 //Obtenemos la fila de meeps detras del jugador
-        scoreMultiplicator = 0;
+        float scoreMultiplicator = 0;
 
         for(int i = 0; i < meeps.Count; i++)
         {
@@ -131,7 +119,6 @@ public class PlayerController : MonoBehaviour
 
         playerDamage = (float)System.Math.Round(scoreMultiplicator, 1);                                             //Sumamos el multiplicador al daño del personaje
         UIController._instance.SetDamage(playerDamage);
-        //Debug.Log(playerDamage);
     }
 
     public void AddScore()
