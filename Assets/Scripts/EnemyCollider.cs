@@ -12,6 +12,7 @@ public class EnemyCollider : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
+            SoundEffectsManagerController._instance.PlayAttackSound();
             player.AddScore();
 
             //gameObject.GetComponentInParent<GroupMovement>().currentSpeed = velocidadRebote;
