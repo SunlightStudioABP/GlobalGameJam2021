@@ -13,10 +13,12 @@ public class Generator : MonoBehaviour
     #endregion
 
     #region WALLS
-    public int numMaxWalls = 5;
-    public Vector3 firstWallPos;
+    public int numMaxWallsPerSide = 5;
+    public Vector3 firstLeftWallPos;
+    public Vector3 firstRightWallPos;
     public GameObject[] wallPrefabs;
 
+    // en la lista se guardaran los muros 0-izq, 1-der, 2-izq, 3-der...
     private List<GameObject> wallList;
     #endregion
 
@@ -24,7 +26,7 @@ public class Generator : MonoBehaviour
     {
        
         // crear lista de terrenos
-        groundList = new List<GameObject>(numMaxGroundAreas);
+        groundList = new List<GameObject>();
         // rellenar la lista de terrenos
         for (int i = 0; i < numMaxGroundAreas; ++i)
             groundList.Add(Instantiate(groundPrefab, transform));
@@ -35,25 +37,30 @@ public class Generator : MonoBehaviour
             groundList[i].transform.position = new Vector3(0, 0, i * groundDepthMagnitude);
 
         // crear lista de muros
-        wallList = new List<GameObject>(wallPrefabs.Length);
+        wallList = new List<GameObject>();
         // rellenar la lista de muros
-        for (int i = 0; i < numMaxWalls; ++i)
+        for (int i = 0; i < numMaxWallsPerSide; ++i)
         {
-            int prefabRandomIndex = (int) Mathf.Round(Random.Range(0, wallPrefabs.Length));
+            int prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
+            wallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // izq
 
-            wallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform));
+            prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
+            wallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // der
         }
 
         // los colocamos en su lugar
 
         // el primer muro no depende de nadie, tenemos que poner su valor inicial
         if (wallList.Count > 0)
-            wallList[0].transform.position = firstWallPos;
-
-        // el resto de muros siempre dependeran del muro anterior
-        for (int i = 1; i < wallList.Count; ++i)
         {
-            GameObject lastWall = wallList[i - 1];
+            wallList[0].transform.position = firstLeftWallPos;  // izq
+            wallList[1].transform.position = firstRightWallPos; // der
+        }
+
+        // el resto de muros siempre dependeran del muro anterior (2 anteriores, ya que alternan izq-der-izq-der...)
+        for (int i = 2; i < wallList.Count; ++i)
+        {
+            GameObject lastWall = wallList[i - 2];
             GameObject thisWall = wallList[i];
 
             Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
@@ -80,9 +87,9 @@ public class Generator : MonoBehaviour
 
     public void GenerateWall()
     {
-        int prefabRandomIndex = (int) Mathf.Round(Random.Range(0, wallPrefabs.Length));
+        int prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
 
-        GameObject lastWall = wallList[wallList.Count - 1];
+        GameObject lastWall = wallList[wallList.Count - 2]; // "- 2" porque izq y der alternan (izq - der - izq - der...)
         GameObject newWall = Instantiate(wallPrefabs[prefabRandomIndex], transform);
 
         Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
