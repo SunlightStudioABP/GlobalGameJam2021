@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundEffectsManagerController._instance.PlayHurtPlayerSound();
             MeepCollector._instance.KillLastMeep();
             Destroy(gameObject);
 
@@ -15,6 +16,7 @@ public class Obstacle : MonoBehaviour
 
         if (other.gameObject.CompareTag("CollectedMeep"))
         {
+            SoundEffectsManagerController._instance.PlayHurtPlayerSound();
             MeepCollector._instance.Kill(other.gameObject);
             Destroy(gameObject);
         }

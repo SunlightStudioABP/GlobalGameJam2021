@@ -47,7 +47,9 @@ public class MeepCollector : MonoBehaviour
 
         AssignMeepTypeAndPlayerStats(meep);
 
-        if(meeps.Count < 2)
+        SoundEffectsManagerController._instance.PlayCollectMeepSound();
+
+        if (meeps.Count < 2)
         {
             meep.GetComponent<FollowPlayer>().SetTarget(transform);
         }

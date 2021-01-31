@@ -68,12 +68,14 @@ public class UIController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
+                    SoundEffectsManagerController._instance.PlayMenuOptionSound();
                     actualOption--;
                     if (actualOption == 0)
                         actualOption = 3;
                 }
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
+                    SoundEffectsManagerController._instance.PlayMenuOptionSound();
                     actualOption++;
                     if (actualOption == 4)
                         actualOption = 1;
@@ -94,6 +96,7 @@ public class UIController : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 {
+                    SoundEffectsManagerController._instance.PlaySelectMenuOptionSound();
                     switch (actualOption)
                     {
                         case 1:
@@ -120,12 +123,14 @@ public class UIController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
+                SoundEffectsManagerController._instance.PlayMenuOptionSound();
                 pauseOption--;
                 if (pauseOption == 0)
                     pauseOption = 2;
             }
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
+                SoundEffectsManagerController._instance.PlayMenuOptionSound();
                 pauseOption++;
                 if (pauseOption == 3)
                     pauseOption = 1;
@@ -143,6 +148,7 @@ public class UIController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape))
             {
+                SoundEffectsManagerController._instance.PlaySelectMenuOptionSound();
                 switch (pauseOption)
                 {
                     case 1:
@@ -161,12 +167,14 @@ public class UIController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
+                SoundEffectsManagerController._instance.PlayMenuOptionSound();
                 gameOverOption--;
                 if (gameOverOption == 0)
                     gameOverOption = 2;
             }
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
+                SoundEffectsManagerController._instance.PlayMenuOptionSound();
                 gameOverOption++;
                 if (gameOverOption == 3)
                     gameOverOption = 1;
@@ -184,6 +192,7 @@ public class UIController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
+                SoundEffectsManagerController._instance.PlaySelectMenuOptionSound();
                 switch (gameOverOption)
                 {
                     case 1:
