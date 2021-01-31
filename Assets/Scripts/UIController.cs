@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
     AudioClip menuSong, ingameSong, inGameintro;
 
     [SerializeField]
-    private GameObject panelMainMenu, panelGame, panelIngame, panelGameOver;
+    private GameObject panelMainMenu, panelGame, panelIngame, panelGameOver, panelCredits;
     int actualOption = 1, pauseOption = 1, gameOverOption = 1;
 
     [SerializeField]
@@ -103,7 +103,7 @@ public class UIController : MonoBehaviour
                             StartGame();
                             break;
                         case 2:
-                            //Creditos
+                            CreditsScreen();
                             break;
                         case 3:
                             Application.Quit();
@@ -205,6 +205,26 @@ public class UIController : MonoBehaviour
             }
         }
         #endregion
+
+        #region Credits
+        if (activePanel == panelCredits)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||
+                Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                SoundEffectsManagerController._instance.PlaySelectMenuOptionSound();
+                //Provisional
+                activePanel.SetActive(false);
+                activePanel = panelMainMenu;
+                activePanel.SetActive(true);
+                music.volume = 1f;
+            }
+        }
+        #endregion
+
+
+
         #region Game
         if (activePanel == panelGame)
         {
@@ -220,6 +240,14 @@ public class UIController : MonoBehaviour
         gameOverOption = 1;
         activePanel.SetActive(false);
         activePanel = panelGameOver;
+        activePanel.SetActive(true);
+        music.volume = volume;
+    }
+
+    public void CreditsScreen()
+    {
+        activePanel.SetActive(false);
+        activePanel = panelCredits;
         activePanel.SetActive(true);
         music.volume = volume;
     }

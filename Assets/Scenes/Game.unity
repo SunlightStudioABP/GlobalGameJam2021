@@ -470,6 +470,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 433a49c3b33837744ad60dd6711ccc6c, type: 3}
+--- !u!1 &164220059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 791165832, guid: efeda8ca90ef30f47a834b35a873b746,
+    type: 3}
+  m_PrefabInstance: {fileID: 8821123713136660977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &290416164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,6 +1883,11 @@ PrefabInstance:
       propertyPath: volume
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3301746215709500010, guid: efeda8ca90ef30f47a834b35a873b746,
+        type: 3}
+      propertyPath: panelCredits
+      value: 
+      objectReference: {fileID: 164220059}
     - target: {fileID: 3301746215709500014, guid: efeda8ca90ef30f47a834b35a873b746,
         type: 3}
       propertyPath: m_Pivot.x
