@@ -41,6 +41,8 @@ public class MeepCollector : MonoBehaviour
         meep.AddComponent<FollowPlayer>();
         Destroy(meep.GetComponent<MeepPicker>());
         meep.tag = "CollectedMeep";
+        meep.GetComponent<Animator>().SetBool("Collected", true);
+
         AssignMeepTypeAndPlayerStats(meep);
 
         if(meeps.Count < 2)
