@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &154060501
 PrefabInstance:
@@ -610,6 +610,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundPrefab: {fileID: 6216072960484934872, guid: b12dc7aec2359694bab2eb22af3da3f5,
     type: 3}
+  wallPrefabs:
+  - {fileID: 7634141258161564567, guid: 4768fcbae40267840984744e5643d1d4, type: 3}
+  - {fileID: 8623593798106732169, guid: 2c3bba65716c7224980497ca089d3c4b, type: 3}
+  - {fileID: 6671176578272215503, guid: 865809626a5360e43b626c40ed0717e7, type: 3}
 --- !u!114 &627355371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbc2ef974ebc974c97a31097d9275f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -5
   velocity: {x: 0, y: 0, z: 1}
 --- !u!4 &627355372
 Transform:
@@ -791,6 +795,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3301746215709500009, guid: efeda8ca90ef30f47a834b35a873b746,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3301746215709500010, guid: efeda8ca90ef30f47a834b35a873b746,
         type: 3}
       propertyPath: music
@@ -809,7 +818,7 @@ PrefabInstance:
     - target: {fileID: 3301746215709500014, guid: efeda8ca90ef30f47a834b35a873b746,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3301746215709500014, guid: efeda8ca90ef30f47a834b35a873b746,
         type: 3}
@@ -1133,7 +1142,7 @@ Transform:
   - {fileID: 1258813966}
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1101255464
 MonoBehaviour:
