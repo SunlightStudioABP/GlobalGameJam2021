@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     public static UIController _instance;
 
     [SerializeField]
-    private TextMeshProUGUI distanceText, scoreText, damageText, speedText;
+    private TextMeshProUGUI distanceText, scoreText, damageText, speedText, distanceTextShadow, scoreTextShadow, damageTextShadow, speedTextShadow;
 
 
     [SerializeField]
@@ -20,13 +20,13 @@ public class UIController : MonoBehaviour
 
     [SerializeField]
     private GameObject panelMainMenu, panelGame, panelIngame;
-    int actualOption = 1;
+    int actualOption = 1, pauseOption = 1;
 
     [SerializeField]
-    private Sprite selectedPlay, selectedCredits, selectedExit;
+    private Sprite selectedPlay, selectedCredits, selectedExit, selectedMainMenu, selectedResume;
 
     [SerializeField]
-    private Image mainMenuImage;
+    private Image mainMenuImage, pauseMenuImage;
 
     private GameObject activePanel;
 
@@ -57,7 +57,8 @@ public class UIController : MonoBehaviour
             music.Play();
         }
 
-        if(activePanel == panelMainMenu)
+        #region Main Menu
+        if (activePanel == panelMainMenu)
         {
             if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
@@ -101,11 +102,60 @@ public class UIController : MonoBehaviour
                 }
             }
         }
+        #endregion
+        #region Pause Menu
+        if (activePanel == panelIngame)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                pauseOption--;
+                if (pauseOption == 0)
+                    pauseOption = 2;
+            }
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                pauseOption++;
+                if (pauseOption == 3)
+                    pauseOption = 1;
+            }
+
+            switch (pauseOption)
+            {
+                case 1:
+                    pauseMenuImage.sprite = selectedResume;
+                    break;
+                case 2:
+                    pauseMenuImage.sprite = selectedMainMenu;
+                    break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            {
+                switch (pauseOption)
+                {
+                    case 1:
+                        StartGame();
+                        break;
+                    case 2:
+                        EndGame();
+                        break;
+                }
+            }
+        }
+        #endregion
+        #region Game
+        if (activePanel == panelGame)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                PauseGame();
+        }
+        #endregion
 
     }
 
     public void PauseGame()
     {
+        pauseOption = 1;
         activePanel.SetActive(false);
         activePanel = panelIngame;
         activePanel.SetActive(true);
@@ -140,18 +190,22 @@ public class UIController : MonoBehaviour
     public void SetDistance(int f)
     {
         distanceText.text = f.ToString() + "m";
+        distanceTextShadow.text = f.ToString() + "m";
     }
     public void SetDamage(float damage)
     {
         damageText.text = damage.ToString();
+        damageTextShadow.text = damage.ToString();
     }
     public void SetSpeed(float speed)
     {
         speedText.text = speed.ToString();
+        speedTextShadow.text = speed.ToString();
     }
 
     public void SetScore(float score)
     {
         scoreText.text = score.ToString();
+        scoreTextShadow.text = score.ToString();
     }
 }
