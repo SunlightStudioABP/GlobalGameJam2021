@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: -876369982130871010}
   - component: {fileID: -5876302182514468576}
   - component: {fileID: -3234248908030744877}
+  - component: {fileID: -5828905395040321058}
   m_Layer: 0
   m_Name: Biir5
   m_TagString: Untagged
@@ -490,6 +491,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 118
   m_CollisionDetection: 0
+--- !u!95 &-5828905395040321058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253726243039724319}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 686d6f2435fc81b4bace9f6a84359fc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7289887666386672940
 GameObject:
   m_ObjectHideFlags: 0
