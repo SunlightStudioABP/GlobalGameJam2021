@@ -612,8 +612,8 @@ MonoBehaviour:
   groundPrefab: {fileID: 6216072960484934872, guid: b12dc7aec2359694bab2eb22af3da3f5,
     type: 3}
   numMaxWallsPerSide: 6
-  firstLeftWallPos: {x: -7.5, y: 1, z: 0}
-  firstRightWallPos: {x: 7.5, y: 1, z: 0}
+  firstLeftWallPos: {x: -15, y: 1, z: 0}
+  firstRightWallPos: {x: 15, y: 1, z: 0}
   wallPrefabs:
   - {fileID: 8923151476621599643, guid: 7db742eb8e64fdf4cb532e5a0e832526, type: 3}
   - {fileID: 7239714383099313763, guid: 81d2da22f66ae6c48b8afa338fc8daaf, type: 3}
