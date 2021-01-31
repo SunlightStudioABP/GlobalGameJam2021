@@ -21,7 +21,7 @@ public class GroupMovement : MonoBehaviour
     private void accelerate()
     {
         if (currentSpeed < targetSpeed)
-            currentSpeed += acceleration;
+            currentSpeed += acceleration * Time.deltaTime;
         if (currentSpeed > targetSpeed)
             fixSpeed();
     }
@@ -29,7 +29,7 @@ public class GroupMovement : MonoBehaviour
     private void brake()
     {
         if (currentSpeed > targetSpeed)
-            currentSpeed += acceleration;
+            currentSpeed += acceleration * Time.deltaTime;
         if (currentSpeed < targetSpeed)
             fixSpeed();
     }

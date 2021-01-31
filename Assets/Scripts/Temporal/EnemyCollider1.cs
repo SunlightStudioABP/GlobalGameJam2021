@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class EnemyCollider1 : MonoBehaviour
 {
-    float velocidadRebote;
-    private void Start()
-    {
-        velocidadRebote = 300f;
-    }
-
+    public float velocidadRebote = 100f;
 
     private void OnTriggerEnter(Collider other)
     {
