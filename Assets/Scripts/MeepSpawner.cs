@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeepSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject meep;
+    private GameObject[] meeps;
 
     [SerializeField]
     private Transform parentGroup;
@@ -17,7 +17,9 @@ public class MeepSpawner : MonoBehaviour
 
     private void Create()
     {
-        GameObject instance = Instantiate(meep, parentGroup);
+        int randomMeepIndex = (int) Mathf.Round(Random.Range(0, meeps.Length));
+
+        GameObject instance = Instantiate(meeps[randomMeepIndex], parentGroup);
 
         instance.transform.Translate(Random.Range(-10f, 10f), 0f, Random.Range(0f, 10f));
     }
