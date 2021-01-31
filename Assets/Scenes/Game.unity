@@ -1481,7 +1481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1248486112
 MonoBehaviour:
@@ -2173,8 +2173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6af45da3c4f3404e8f471a77392edec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainMovement: {fileID: 0}
-  obstaclesMovement: {fileID: 0}
+  terrainMovement: {fileID: 2011928542}
+  obstaclesMovement: {fileID: 928073576}
 --- !u!114 &2096006518
 MonoBehaviour:
   m_ObjectHideFlags: 0
