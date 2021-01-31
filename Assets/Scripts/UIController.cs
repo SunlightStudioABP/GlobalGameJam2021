@@ -237,7 +237,7 @@ public class UIController : MonoBehaviour
 
     private void StartGame()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         activePanel.SetActive(false);
         activePanel = panelGame;
         activePanel.SetActive(true);
