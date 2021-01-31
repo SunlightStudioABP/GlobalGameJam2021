@@ -18,8 +18,8 @@ public class Generator : MonoBehaviour
     public Vector3 firstRightWallPos;
     public GameObject[] wallPrefabs;
 
-    // en la lista se guardaran los muros 0-izq, 1-der, 2-izq, 3-der...
-    private List<GameObject> wallList;
+    private List<GameObject> leftWallList;
+    private List<GameObject> rightWallList;
     #endregion
 
     private void Awake()
@@ -37,31 +37,30 @@ public class Generator : MonoBehaviour
             groundList[i].transform.position = new Vector3(0, 0, i * groundDepthMagnitude);
 
         // crear lista de muros
-        wallList = new List<GameObject>();
+        leftWallList = new List<GameObject>();
+        rightWallList = new List<GameObject>();
         // rellenar la lista de muros
         for (int i = 0; i < numMaxWallsPerSide; ++i)
         {
             int prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
-            wallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // izq
+            leftWallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // izq
 
             prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
-            wallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // der
+            rightWallList.Add(Instantiate(wallPrefabs[prefabRandomIndex], transform)); // der
         }
 
         // los colocamos en su lugar
 
         // el primer muro no depende de nadie, tenemos que poner su valor inicial
-        if (wallList.Count > 0)
-        {
-            wallList[0].transform.position = firstLeftWallPos;  // izq
-            wallList[1].transform.position = firstRightWallPos; // der
-        }
+        if (leftWallList.Count > 0)
+            leftWallList[0].transform.position = firstLeftWallPos;
+        if (rightWallList.Count > 0)
+            rightWallList[0].transform.position = firstRightWallPos;
 
-        // el resto de muros siempre dependeran del muro anterior (2 anteriores, ya que alternan izq-der-izq-der...)
-        for (int i = 2; i < wallList.Count; ++i)
+        for (int i = 1; i < leftWallList.Count; ++i)
         {
-            GameObject lastWall = wallList[i - 2];
-            GameObject thisWall = wallList[i];
+            GameObject lastWall = leftWallList[i - 1];
+            GameObject thisWall = leftWallList[i];
 
             Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
             Bounds thisWallBounds = thisWall.GetComponent<Collider>().bounds;
@@ -71,36 +70,80 @@ public class Generator : MonoBehaviour
             float newZ = lastWall.transform.position.z + Mathf.Abs(lastWallBounds.max.z) + Mathf.Abs(thisWallBounds.min.z);
 
             thisWall.transform.position = new Vector3(newX, newY, newZ);
+
+            lastWall = rightWallList[i - 1];
+            thisWall = rightWallList[i];
+
+            lastWallBounds = lastWall.GetComponent<Collider>().bounds;
+            thisWallBounds = thisWall.GetComponent<Collider>().bounds;
+
+            newX = lastWall.transform.position.x;
+            newY = lastWall.transform.position.y;
+            newZ = lastWall.transform.position.z + Mathf.Abs(lastWallBounds.max.z) + Mathf.Abs(thisWallBounds.min.z);
+
+            thisWall.transform.position = new Vector3(newX, newY, newZ);
         }
     }
 
     public void GenerateGround()
     {
-        Vector3 lastItemPosition = groundList[groundList.Count - 1].transform.position;
+  /*      Vector3 lastItemPosition = groundList[groundList.Count - 1].transform.position;
         Vector3 translation = lastItemPosition + new Vector3(0, 0, groundDepthMagnitude);
 
         GameObject instance = Instantiate(groundPrefab, transform);
         instance.transform.Translate(translation);
 
         groundList.Add(instance);
+        */
+        GameObject lastGround = groundList[groundList.Count - 1];
+        GameObject newGround = Instantiate(groundPrefab, transform);
+
+        Bounds lastGroundBounds = lastGround.GetComponent<Collider>().bounds;
+        Bounds newGroundBounds = newGround.GetComponent<Collider>().bounds;
+
+        float newX = lastGround.transform.position.x;
+        float newY = lastGround.transform.position.y;
+        float newZ = lastGround.transform.position.z + groundDepthMagnitude;
+
+        newGround.transform.position = new Vector3(newX, newY, newZ);
+
+        groundList.Add(newGround);
     }
 
-    public void GenerateWall()
+    public void GenerateWall(float leftRightValue)
     {
         int prefabRandomIndex = (int)Mathf.Round(Random.Range(0, wallPrefabs.Length));
 
-        GameObject lastWall = wallList[wallList.Count - 2]; // "- 2" porque izq y der alternan (izq - der - izq - der...)
-        GameObject newWall = Instantiate(wallPrefabs[prefabRandomIndex], transform);
+        if (leftRightValue < 0) {
+            GameObject lastWall = leftWallList[leftWallList.Count - 1];
+            GameObject newWall = Instantiate(wallPrefabs[prefabRandomIndex], transform);
 
-        Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
-        Bounds thisWallBounds = newWall.GetComponent<Collider>().bounds;
+            Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
+            Bounds newWallBounds = newWall.GetComponent<Collider>().bounds;
 
-        float newX = lastWall.transform.position.x;
-        float newY = lastWall.transform.position.y;
-        float newZ = lastWallBounds.max.z + Mathf.Abs(thisWallBounds.min.z);
+            float newX = lastWall.transform.position.x;
+            float newY = lastWall.transform.position.y;
+            float newZ = lastWallBounds.center.z + (lastWallBounds.size.z + newWallBounds.size.z) / 2f;
 
-        newWall.transform.position = new Vector3(newX, newY, newZ);
+            newWall.transform.position = new Vector3(newX, newY, newZ);
 
-        wallList.Add(newWall);
+            leftWallList.Add(newWall);
+        }
+        else if (leftRightValue > 0)
+        {
+            GameObject lastWall = rightWallList[rightWallList.Count - 1];
+            GameObject newWall = Instantiate(wallPrefabs[prefabRandomIndex], transform);
+
+            Bounds lastWallBounds = lastWall.GetComponent<Collider>().bounds;
+            Bounds newWallBounds = newWall.GetComponent<Collider>().bounds;
+
+            float newX = lastWall.transform.position.x;
+            float newY = lastWall.transform.position.y;
+            float newZ = lastWallBounds.center.z + (lastWallBounds.size.z + newWallBounds.size.z) / 2f;
+
+            newWall.transform.position = new Vector3(newX, newY, newZ);
+
+            rightWallList.Add(newWall);
+        }
     }
 }
