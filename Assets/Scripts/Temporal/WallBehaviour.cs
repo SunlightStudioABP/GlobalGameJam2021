@@ -9,6 +9,6 @@ public class WallBehaviour : MonoBehaviour
         Generator gen = GetComponentInParent<Generator>();
 
         if (gen)
-            GetComponentInParent<Generator>().GenerateWall();
+            GetComponentInParent<Generator>().GenerateWall(transform.position.x);
     }
 }
