@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4820388e601455489084c1d222bdbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numMaxGroundAreas: 4
+  numMaxGroundAreas: 6
   groundPrefab: {fileID: 6216072960484934872, guid: b12dc7aec2359694bab2eb22af3da3f5,
     type: 3}
   numMaxWallsPerSide: 10
@@ -2192,7 +2192,7 @@ MonoBehaviour:
   playerMeeps: 1
   playerMeepsDamageType: 0
   playerDamage: 0
-  playerSpeed: 10
+  playerSpeed: 0
   playerScore: 0
   playerScoreDistance: 0
   scoreMultiplicator: 0

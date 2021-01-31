@@ -9,7 +9,7 @@ public class TerrainSpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("GenerateTerrainPrefab", 5f, 5f);
+        InvokeRepeating("GenerateTerrainPrefab", 3f, 3f);
     }
 
     private void GenerateTerrainPrefab()
