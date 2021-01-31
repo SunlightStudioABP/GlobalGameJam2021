@@ -9,6 +9,7 @@ TagManager:
   - Cube
   - Rebote
   - CollectedMeep
+  - SuperParent
   layers:
   - Default
   - TransparentFX
