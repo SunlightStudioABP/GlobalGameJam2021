@@ -3503,6 +3503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6af45da3c4f3404e8f471a77392edec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrainMovement: {fileID: 928073576}
+  obstaclesMovement: {fileID: 2011928542}
 --- !u!114 &2096006518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3749,6 +3751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161712498797351887, guid: ae55cd4ba521f2043b5dbe207b9fc498,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6432166176640183965, guid: ae55cd4ba521f2043b5dbe207b9fc498,
         type: 3}

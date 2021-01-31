@@ -9,13 +9,14 @@ public class Obstacle : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             MeepCollector._instance.KillLastMeep();
-            Destroy(GetComponent<Obstacle>());
+            Destroy(gameObject);
+
         }
 
         if (other.gameObject.CompareTag("CollectedMeep"))
         {
             MeepCollector._instance.Kill(other.gameObject);
-            Destroy(GetComponent<Obstacle>());
+            Destroy(gameObject);
         }
     }
 }

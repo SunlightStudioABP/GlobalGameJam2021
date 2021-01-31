@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MeepCollector : MonoBehaviour
 {
+    public ChildrenMovement terrainMovement;
+    public ChildrenMovement obstaclesMovement;
     /* 
         Resumen: 
             no pongais ningun "new" fuera de ninguna funcion
@@ -105,6 +107,12 @@ public class MeepCollector : MonoBehaviour
         }
         else
         {
+            GetComponent<Animator>().SetBool("Alive", false);
+            Destroy(GetComponent<CharacterController>());
+            Destroy(GetComponent<PlayerController>());
+            Destroy(GetComponentInParent<GroupMovement>());
+            Destroy(terrainMovement);
+            Destroy(obstaclesMovement);
             UIController._instance.DieScreen();
         }
     }
