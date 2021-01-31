@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
 
     private int distance;
 
+    public float increaseMovement = 5f;
+
+    [SerializeField]
+    private ChildrenMovement[] terreno;
 
     private CharacterController controller;
 
@@ -99,7 +103,13 @@ public class PlayerController : MonoBehaviour
 
             case 1: // Modo speedMeep, subimos la velocidad
               //  playerSpeed++;
-                GetComponentInParent<GroupMovement>().targetSpeed += 1f;
+                GetComponentInParent<GroupMovement>().targetSpeed += increaseMovement;
+
+                for (int i = 0; i < terreno.Length; i++)
+                {
+                    terreno[i].speed -= increaseMovement;
+                }
+
                 UIController._instance.SetSpeed(GetComponentInParent<GroupMovement>().targetSpeed);
                 break;
         }

@@ -64,7 +64,7 @@ public class UIController : MonoBehaviour
         #region Main Menu
         if (activePanel == panelMainMenu)
         {
-            if (!ReplayMode._instance.IsReplay())
+            if (!ReplayMode.replay)
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
@@ -155,7 +155,7 @@ public class UIController : MonoBehaviour
                         ResumeGame();
                         break;
                     case 2:
-                        ReplayMode._instance.SetBool(false);
+                        ReplayMode.replay = false;
                         EndGame();
                         break;
                 }
@@ -240,7 +240,7 @@ public class UIController : MonoBehaviour
     }
     private void ReestartGame()
     {
-        ReplayMode._instance.SetBool(true);
+        ReplayMode.replay = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

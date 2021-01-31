@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
         {
             SoundEffectsManagerController._instance.PlayHurtPlayerSound();
             MeepCollector._instance.KillLastMeep();
-            Destroy(GetComponent<Obstacle>());
+            Destroy(gameObject);
 
         }
 
@@ -18,7 +18,7 @@ public class Obstacle : MonoBehaviour
         {
             SoundEffectsManagerController._instance.PlayHurtPlayerSound();
             MeepCollector._instance.Kill(other.gameObject);
-            Destroy(GetComponent<Obstacle>());
+            Destroy(gameObject);
         }
     }
 }

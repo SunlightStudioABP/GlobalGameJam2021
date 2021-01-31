@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1538742579362576061
+--- !u!1 &3277715700344227729
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2166625688849542151}
-  - component: {fileID: 3008049412972995490}
-  - component: {fileID: 1034220742314760040}
-  - component: {fileID: -8993075955232089480}
-  - component: {fileID: 3784714305739033997}
-  m_Layer: 0
-  m_Name: Muro3
+  - component: {fileID: 2753697995140455723}
+  - component: {fileID: 1267976780296376974}
+  - component: {fileID: 3926071661846242884}
+  - component: {fileID: 2431276128361217874}
+  - component: {fileID: 3088331582754291389}
+  m_Layer: 12
+  m_Name: Arbol2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2166625688849542151
+--- !u!4 &2753697995140455723
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538742579362576061}
+  m_GameObject: {fileID: 3277715700344227729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3008049412972995490
+--- !u!33 &1267976780296376974
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538742579362576061}
-  m_Mesh: {fileID: -3363409477698517323, guid: d17e1c19344e4b140839e54ccb1afae4, type: 3}
---- !u!23 &1034220742314760040
+  m_GameObject: {fileID: 3277715700344227729}
+  m_Mesh: {fileID: -4826929447448276505, guid: a95da089ea1a64a41b3442d78fdfbfc2, type: 3}
+--- !u!23 &3926071661846242884
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538742579362576061}
+  m_GameObject: {fileID: 3277715700344227729}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,9 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b712b476d97199545abee1f82f028fe6, type: 2}
-  - {fileID: 2100000, guid: 74109b4b074df9346b3ab61419cff162, type: 2}
-  - {fileID: 2100000, guid: 79868a89404850142861e93aa55799ce, type: 2}
+  - {fileID: 2100000, guid: 8bf8d327d1cd10c49b7c866ea9d8f62d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,28 +81,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-8993075955232089480
+--- !u!65 &2431276128361217874
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538742579362576061}
+  m_GameObject: {fileID: 3277715700344227729}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.009056225, y: 0.03433694, z: 0.33626518}
-  m_Center: {x: -0.0001964292, y: 0.01162559, z: -0.0033467263}
---- !u!114 &3784714305739033997
+  m_Size: {x: 0.052545838, y: 0.06312591, z: 0.10113398}
+  m_Center: {x: -0.0013949703, y: -0.0065427283, z: 0.041305568}
+--- !u!114 &3088331582754291389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538742579362576061}
+  m_GameObject: {fileID: 3277715700344227729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4f01077bd84584c89d17a809e46ae1, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a4e4fbf9f2bb4469c1e600df1e8a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
