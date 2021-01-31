@@ -13,15 +13,19 @@ public class UIController : MonoBehaviour
 
 
     [SerializeField]
+    private AudioSource music;
+
+    [SerializeField]
+    AudioClip menuSong, ingameSong, inGameintro;
+
+    [SerializeField]
     private GameObject panelMainMenu, panelGame, panelIngame;
 
     private GameObject activePanel;
 
-    int meeps;
-
     private void Awake()
     {
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
 
         if (_instance == null)
         {
@@ -38,6 +42,15 @@ public class UIController : MonoBehaviour
         activePanel = panelMainMenu;    
     }
 
+    private void Update()
+    {
+        if (!music.isPlaying)
+        {
+            music.clip = ingameSong;
+            music.Play();
+        }
+    }
+
     public void PauseGame()
     {
         activePanel.SetActive(false);
@@ -52,6 +65,9 @@ public class UIController : MonoBehaviour
         activePanel = panelMainMenu;
         activePanel.SetActive(true);
         Time.timeScale = 0;
+
+        music.clip = menuSong;
+        music.Play();
     }
 
     public void StartGame()
@@ -60,6 +76,10 @@ public class UIController : MonoBehaviour
         activePanel.SetActive(false);
         activePanel = panelGame;
         activePanel.SetActive(true);
+
+        music.clip = inGameintro;
+
+        music.Play();
     }
 
     public void SetDistance(int f)
