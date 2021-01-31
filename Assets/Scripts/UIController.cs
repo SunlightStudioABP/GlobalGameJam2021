@@ -141,7 +141,7 @@ public class UIController : MonoBehaviour
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape))
             {
                 switch (pauseOption)
                 {
