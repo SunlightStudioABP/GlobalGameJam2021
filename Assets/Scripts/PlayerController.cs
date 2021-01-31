@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             case 1: // Modo speedMeep, subimos la velocidad
               //  playerSpeed++;
                 GetComponentInParent<GroupMovement>().targetSpeed += increaseMovement;
-                playerSpeed += 5f;
+                playerSpeed += 2.5f;
 
                 for (int i = 0; i < terreno.Length; i++)
                 {
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     public void AddScore()
     {
         score += playerDamage;
-        UIController._instance.SetScore(score);
+        UIController._instance.SetScore((float)System.Math.Round(score,0));
     }
 
 }
