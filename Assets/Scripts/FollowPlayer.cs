@@ -10,7 +10,8 @@ public class FollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(target.transform.position);
+        if(target)
+        transform?.LookAt(target.transform.position);
 
         if (target && transform && (target.position - transform.position).magnitude > distancia)
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
