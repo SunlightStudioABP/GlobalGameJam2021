@@ -97,6 +97,12 @@ public class PlayerController : MonoBehaviour
                 GetComponentInParent<GroupMovement>().targetSpeed += increaseMovement;
                 playerSpeed += 2.5f;
 
+                List<GameObject> meeps = MeepCollector._instance.getMeepList();                 //Obtenemos la fila de meeps detras del jugador
+                foreach(GameObject meep in meeps) 
+                {
+                    meep.GetComponent<FollowPlayer>().speed += 2.5f;
+                }
+
                 for (int i = 0; i < terreno.Length; i++)
                 {
                     terreno[i].speed -= increaseMovement;
@@ -114,7 +120,8 @@ public class PlayerController : MonoBehaviour
 
         for(int i = 0; i < meeps.Count; i++)
         {
-            if ((int)meeps[i].GetComponent<MeepController>().getMeepCurrentType() == 1) //Si el meep es de tipo danyo
+
+            if ((int)meeps[i]?.GetComponent<MeepController>()?.getMeepCurrentType() == 1) //Si el meep es de tipo danyo
             {
                 meeps[i].GetComponent<MeepController>().AddDamage(scoreMultiplicatorRatio);
                 scoreMultiplicator += meeps[i].GetComponent<MeepController>().GetDamageMultiplier();

@@ -120,11 +120,11 @@ public class MeepCollector : MonoBehaviour
         {
             if(i == 0)
             {
-                meeps[i].GetComponent<FollowPlayer>().SetTarget(transform);
+                meeps[i]?.GetComponent<FollowPlayer>()?.SetTarget(transform);
             }
             else
             {
-                meeps[i].GetComponent<FollowPlayer>().SetTarget(meeps[i-1].transform);
+                meeps[i]?.GetComponent<FollowPlayer>()?.SetTarget(meeps[i-1]?.transform);
             }
         }
     }

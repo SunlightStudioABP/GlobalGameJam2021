@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     private Transform target;
     private float distancia = 2.5f;
-    private float speed = 10f;
+    public float speed = 10f;
 
     private void Update()
     {
@@ -20,4 +20,6 @@ public class FollowPlayer : MonoBehaviour
     {
         target = t;
     }
+
+
 }
