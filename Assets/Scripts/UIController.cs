@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -134,7 +135,7 @@ public class UIController : MonoBehaviour
                 switch (pauseOption)
                 {
                     case 1:
-                        StartGame();
+                        ResumeGame();
                         break;
                     case 2:
                         EndGame();
@@ -153,7 +154,7 @@ public class UIController : MonoBehaviour
 
     }
 
-    public void PauseGame()
+    private void PauseGame()
     {
         pauseOption = 1;
         activePanel.SetActive(false);
@@ -164,18 +165,10 @@ public class UIController : MonoBehaviour
 
     public void EndGame()
     {
-        activePanel.SetActive(false);
-        activePanel = panelMainMenu;
-        activePanel.SetActive(true);
-        Time.timeScale = 0;
-
-        music.clip = menuSong;
-        music.Play();
-
-        actualOption = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void StartGame()
+    private void StartGame()
     {
         Time.timeScale = 1;
         activePanel.SetActive(false);
@@ -185,6 +178,14 @@ public class UIController : MonoBehaviour
         music.clip = inGameintro;
 
         music.Play();
+    }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1;
+        activePanel.SetActive(false);
+        activePanel = panelGame;
+        activePanel.SetActive(true);
     }
 
     public void SetDistance(int f)
