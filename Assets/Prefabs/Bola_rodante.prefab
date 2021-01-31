@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 975657670115258095}
   - component: {fileID: -4701470171912180422}
   - component: {fileID: 1688149285762532615}
+  - component: {fileID: -6479003624033403470}
   m_Layer: 0
   m_Name: Bola_rodante
   m_TagString: Untagged
@@ -123,7 +124,21 @@ BoxCollider:
   m_GameObject: {fileID: 93259111499119716}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.034386992, y: 0.036710106, z: 0.03384285}
   m_Center: {x: 0.001482063, y: 0.000054493546, z: 0.0006946735}
+--- !u!64 &-6479003624033403470
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93259111499119716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3390558720134950976, guid: 791b246db6bf6204d82e1d553a690605, type: 3}

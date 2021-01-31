@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4260307927933998763}
   - component: {fileID: -8180952185254019781}
   - component: {fileID: 165015757701549384}
+  - component: {fileID: 3578186418349314971}
   m_Layer: 0
   m_Name: Columna_bien
   m_TagString: Untagged
@@ -103,7 +104,21 @@ BoxCollider:
   m_GameObject: {fileID: 2314668845704869758}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.023522483, y: 0.02676272, z: 0.0955212}
   m_Center: {x: -0.00072493963, y: 0.0034212624, z: 0.047273114}
+--- !u!64 &3578186418349314971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314668845704869758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8720653040151070463, guid: d24adfb3b371e824ba9293ef534c7581, type: 3}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3133961038771741419}
   - component: {fileID: -7700550440899225403}
   - component: {fileID: 945635486895840943}
+  - component: {fileID: -3941619577867826510}
   m_Layer: 0
   m_Name: Roca3
   m_TagString: Untagged
@@ -91,7 +92,7 @@ BoxCollider:
   m_GameObject: {fileID: 2864141083854954744}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.07493382, y: 0.0663955, z: 0.068347946}
   m_Center: {x: -0.0020506904, y: 0.014371543, z: 0.030501755}
@@ -116,7 +117,21 @@ BoxCollider:
   m_GameObject: {fileID: 2864141083854954744}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.07493382, y: 0.0663955, z: 0.068347946}
   m_Center: {x: -0.0020506904, y: 0.014371543, z: 0.030501815}
+--- !u!64 &-3941619577867826510
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2864141083854954744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7573762950165861608, guid: 6af7273afa01e164d9b438e15df49f3a, type: 3}

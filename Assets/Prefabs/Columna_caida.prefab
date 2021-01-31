@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 729697238123002429}
   - component: {fileID: 6730308317972045080}
   - component: {fileID: 6243384163225582184}
+  - component: {fileID: -7464495263177127767}
   m_Layer: 0
   m_Name: Columna_caida
   m_TagString: Untagged
@@ -103,7 +104,21 @@ BoxCollider:
   m_GameObject: {fileID: 1234157502430977000}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.035958376, y: 0.07471557, z: 0.019896092}
   m_Center: {x: -0.0030456302, y: 0.0061937934, z: 0.007450725}
+--- !u!64 &-7464495263177127767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234157502430977000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6564228173695339538, guid: be0c27f2d126bb946996942db9e438a7, type: 3}

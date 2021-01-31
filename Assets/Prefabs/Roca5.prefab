@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2994883807295723151}
   - component: {fileID: 8428364274482601403}
   - component: {fileID: 6821266824546845360}
+  - component: {fileID: 3837598036717034109}
   m_Layer: 0
   m_Name: Roca5
   m_TagString: Untagged
@@ -91,7 +92,7 @@ BoxCollider:
   m_GameObject: {fileID: 2688261009685918641}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.059535265, y: 0.054483823, z: 0.05395704}
   m_Center: {x: 0.004112635, y: -0.002196053, z: 0.025774604}
@@ -116,7 +117,21 @@ BoxCollider:
   m_GameObject: {fileID: 2688261009685918641}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.059535265, y: 0.054483823, z: 0.05395704}
   m_Center: {x: 0.004112635, y: -0.002196053, z: 0.025774604}
+--- !u!64 &3837598036717034109
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688261009685918641}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4338448257103325363, guid: 5aab372d641b1594a923d70b63c8f02c, type: 3}
